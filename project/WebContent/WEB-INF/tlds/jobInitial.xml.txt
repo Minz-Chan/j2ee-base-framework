@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE quartz PUBLIC
+  "-//Quartz Enterprise Job Scheduler//DTD Job Scheduling Data 1.0//EN"
+  "http://www.quartzscheduler.org/dtd/job_scheduling_data_1_0.dtd">
+<quartz>
+  <job>
+    <job-detail>
+      <name>job1</name>
+      <group>DEFAULT</group>
+      <job-class>package.job1</job-class>
+    </job-detail>
+    <trigger>
+      <cron>
+        <name>trigger1</name>
+        <group>DEFAULT</group>
+        <job-name>job1</job-name>
+        <job-group>DEFAULT</job-group>
+        <cron-expression>0 0/5 * * * ?</cron-expression>
+        <!-- every 5 minutes... -->
+      </cron>
+    </trigger>
+  </job>
+</quartz>
+

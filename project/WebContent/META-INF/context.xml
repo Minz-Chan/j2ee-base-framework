@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+<!--
+
+   test1  
+  <Resource name="jdbc/test1" auth="Container"
+              type="javax.sql.DataSource" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+              url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=test1"
+              username="isc" password="741852963" maxActive="20" maxIdle="10"
+              maxWait="-1"/> 
+              
+   test2  
+  <Resource name="jdbc/test2" auth="Container"
+              type="javax.sql.DataSource" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+              url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=test2"
+              username="isc" password="741852963" maxActive="20" maxIdle="10"
+              maxWait="-1"/> 
+              
+-->
+
+   <!-- Use p6spy -->
+   <!-- test1  -->
+  <Resource name="jdbc/test1" auth="Container"
+              type="javax.sql.DataSource" driverClassName="com.p6spy.engine.spy.P6SpyDriver"
+              url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=test1"
+              username="isc" password="741852963" maxActive="20" maxIdle="10"
+              maxWait="-1"/> 
+              
+  <!-- test2  -->
+  <Resource name="jdbc/test2" auth="Container"
+              type="javax.sql.DataSource" driverClassName="com.p6spy.engine.spy.P6SpyDriver"
+              url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=test2"
+              username="isc" password="741852963" maxActive="20" maxIdle="10"
+              maxWait="-1"/>            
+              
+  
+ 
+</Context>

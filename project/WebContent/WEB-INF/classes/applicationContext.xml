@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:batch="http://www.springframework.org/schema/batch"
+    xmlns:bp="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:faces="http://www.springframework.org/schema/faces"
+    xmlns:flex="http://www.springframework.org/schema/flex"
+    xmlns:flow="http://www.springframework.org/schema/webflow-config"
+    xmlns:int="http://www.springframework.org/schema/integration"
+    xmlns:int-bus="http://www.springframework.org/schema/integration/integration-control-bus"
+    xmlns:int-ext="http://www.springframework.org/schema/integration/integration-service-extender"
+    xmlns:int-file="http://www.springframework.org/schema/integration/file"
+    xmlns:int-http="http://www.springframework.org/schema/integration/http"
+    xmlns:int-httpinvoker="http://www.springframework.org/schema/integration/httpinvoker"
+    xmlns:int-jms="http://www.springframework.org/schema/integration/jms"
+    xmlns:int-mail="http://www.springframework.org/schema/integration/mail"
+    xmlns:int-rmi="http://www.springframework.org/schema/integration/rmi"
+    xmlns:int-security="http://www.springframework.org/schema/integration/security"
+    xmlns:int-stream="http://www.springframework.org/schema/integration/stream"
+    xmlns:int-ws="http://www.springframework.org/schema/integration/ws"
+    xmlns:int-xml="http://www.springframework.org/schema/integration/xml"
+    xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xmlns:jms="http://www.springframework.org/schema/jms"
+    xmlns:lang="http://www.springframework.org/schema/lang"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:osgi="http://www.springframework.org/schema/osgi"
+    xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+    xmlns:oxm="http://www.springframework.org/schema/oxm"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:sec="http://www.springframework.org/schema/security"
+    xmlns:task="http://www.springframework.org/schema/task"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:ws="http://www.springframework.org/schema/web-services"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd
+		http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/faces http://www.springframework.org/schema/faces/spring-faces-2.0.xsd
+		http://www.springframework.org/schema/flex http://www.springframework.org/schema/flex/spring-flex-1.0.xsd
+		http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/integration/integration-control-bus http://www.springframework.org/schema/integration/integration-control-bus/spring-integration-bus-1.0.xsd
+		http://www.springframework.org/schema/integration/integration-service-extender http://www.springframework.org/schema/integration/integration-service-extender/spring-integration-service-extender-1.0.xsd
+		http://www.springframework.org/schema/integration/file http://www.springframework.org/schema/integration/file/spring-integration-file.xsd
+		http://www.springframework.org/schema/integration/http http://www.springframework.org/schema/integration/http/spring-integration-http.xsd
+		http://www.springframework.org/schema/integration/httpinvoker http://www.springframework.org/schema/integration/httpinvoker/spring-integration-httpinvoker.xsd
+		http://www.springframework.org/schema/integration/jms http://www.springframework.org/schema/integration/jms/spring-integration-jms.xsd
+		http://www.springframework.org/schema/integration/mail http://www.springframework.org/schema/integration/mail/spring-integration-mail.xsd
+		http://www.springframework.org/schema/integration/rmi http://www.springframework.org/schema/integration/rmi/spring-integration-rmi.xsd
+		http://www.springframework.org/schema/integration/security http://www.springframework.org/schema/integration/security/spring-integration-security.xsd
+		http://www.springframework.org/schema/integration/stream http://www.springframework.org/schema/integration/stream/spring-integration-stream.xsd
+		http://www.springframework.org/schema/integration/ws http://www.springframework.org/schema/integration/ws/spring-integration-ws.xsd
+		http://www.springframework.org/schema/integration/xml http://www.springframework.org/schema/integration/xml/spring-integration-xml.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+		http://www.springframework.org/schema/osgi-compendium http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
+		http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/web-services http://www.springframework.org/schema/web-services/web-services-1.5.xsd">
+	
+	<!-- 本系统数据源, 配置档于META-INF\context.xml中 -->	
+	<jee:jndi-lookup id="dataSource1"
+        jndi-name="java:comp/env/jdbc/test1"
+		expected-type="javax.sql.DataSource" />
+	<!-- SSO数据源, 配置档于META-INF\context.xml中 -->		
+	<jee:jndi-lookup id="dataSource2"
+        jndi-name="java:comp/env/jdbc/test2"
+		expected-type="javax.sql.DataSource" />
+    
+	
+    <bean id="sessionFactory1"
+        class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource1" />
+        <property name="packagesToScan" value="com.iisi.example.model.test1" />
+        <property name="configLocation" value="/WEB-INF/classes/hibernate1.cfg.xml" />
+    </bean>
+    
+    <bean id="sessionFactory2"
+        class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource2" />
+        <property name="packagesToScan" value="com.iisi.example.model.test2" />
+        <property name="configLocation" value="/WEB-INF/classes/hibernate2.cfg.xml" />
+    </bean>
+    
+    
+    
+    <!-- 事务管理器配置, 多数据源JTA事务-->
+    <bean id="jotm" class="com.iisi.util.jta.JotmFactoryBean"/>
+	<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+         <property name="userTransaction"><ref local="jotm"/></property>
+	</bean>
+    
+    <!-- 使用ANNOTATION定义事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
+    
+    
+    <bean id="hibernateTemplate1"
+        class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory1" /> 
+        <property name="flushModeName" value="FLUSH_EAGER"></property> 
+    </bean>
+    
+    <bean id="hibernateTemplate2"
+        class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory2" /> 
+        <property name="flushModeName" value="FLUSH_EAGER"></property> 
+    </bean>
+    
+    
+	
+	<!-- 该 BeanPostProcessor 将自动对标注 @Autowired 的 Bean 进行注入     -->
+     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/> 
+	
+	<!-- 使用ANNOTATION 自动注册bean(@Respository,@Component),并检查@Required,@Autowired的属性已被注入 -->
+    <context:component-scan base-package="com.iisi" />
+	
+	<!-- 使Spring关注ANNOTATION -->
+    <context:annotation-config />
+    
+    <!-- 强制使用CGLib进行动态代理 -->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    
+</beans>
